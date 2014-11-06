@@ -7,11 +7,11 @@ class RolesController < ApplicationController
     @role = Role.find(params[:id])
   end
 
-  def new
+  def new_form
     @role = Role.new
   end
 
-  def create
+  def create_row
     @role = Role.new
     @role.character_name = params[:character_name]
     @role.movie_id = params[:movie_id]
@@ -24,11 +24,11 @@ class RolesController < ApplicationController
     end
   end
 
-  def edit
+  def edit_form
     @role = Role.find(params[:id])
   end
 
-  def update
+  def update_row
     @role = Role.find(params[:id])
 
     @role.character_name = params[:character_name]

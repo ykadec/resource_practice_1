@@ -7,11 +7,11 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
-  def new
+  def new_form
     @movie = Movie.new
   end
 
-  def create
+  def create_row
     @movie = Movie.new
     @movie.title = params[:title]
     @movie.year = params[:year]
@@ -27,11 +27,11 @@ class MoviesController < ApplicationController
     end
   end
 
-  def edit
+  def edit_form
     @movie = Movie.find(params[:id])
   end
 
-  def update
+  def update_row
     @movie = Movie.find(params[:id])
 
     @movie.title = params[:title]
