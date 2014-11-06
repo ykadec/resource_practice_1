@@ -2,21 +2,21 @@ Rails.application.routes.draw do
   # Route for bare domain:
   get('/', { :controller => 'movies', :action => 'index' })
 
-  # Routes for the Role resource:
+  # Routes for the Director resource:
   # CREATE
-  get('/roles/new', { :controller => 'roles', :action => 'new' })
-  get('/create_role', { :controller => 'roles', :action => 'create' })
+  get('/directors/new', { :controller => 'directors', :action => 'new' })
+  get('/create_director', { :controller => 'directors', :action => 'create' })
 
   # READ
-  get('/roles', { :controller => 'roles', :action => 'index' })
-  get('/roles/:id', { :controller => 'roles', :action => 'show' })
+  get('/directors', { :controller => 'directors', :action => 'index' })
+  get('/directors/:id', { :controller => 'directors', :action => 'show' })
 
   # UPDATE
-  get('/roles/:id/edit', { :controller => 'roles', :action => 'edit' })
-  get('/update_role/:id', { :controller => 'roles', :action => 'update' })
+  get('/directors/:id/edit', { :controller => 'directors', :action => 'edit' })
+  get('/update_director/:id', { :controller => 'directors', :action => 'update' })
 
   # DELETE
-  get('/delete_role/:id', { :controller => 'roles', :action => 'destroy' })
+  get('/delete_director/:id', { :controller => 'directors', :action => 'destroy' })
   #------------------------------
 
   # Routes for the Movie resource:
@@ -36,6 +36,23 @@ Rails.application.routes.draw do
   get('/delete_movie/:id', { :controller => 'movies', :action => 'destroy' })
   #------------------------------
 
+  # Routes for the Role resource:
+  # CREATE
+  get('/roles/new', { :controller => 'roles', :action => 'new' })
+  get('/create_role', { :controller => 'roles', :action => 'create' })
+
+  # READ
+  get('/roles', { :controller => 'roles', :action => 'index' })
+  get('/roles/:id', { :controller => 'roles', :action => 'show' })
+
+  # UPDATE
+  get('/roles/:id/edit', { :controller => 'roles', :action => 'edit' })
+  get('/update_role/:id', { :controller => 'roles', :action => 'update' })
+
+  # DELETE
+  get('/delete_role/:id', { :controller => 'roles', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Actor resource:
   # CREATE
   get('/actors/new', { :controller => 'actors', :action => 'new' })
@@ -52,76 +69,4 @@ Rails.application.routes.draw do
   # DELETE
   get('/delete_actor/:id', { :controller => 'actors', :action => 'destroy' })
   #------------------------------
-
-  # Routes for the Director resource:
-  # CREATE
-  get('/directors/new', { :controller => 'directors', :action => 'new' })
-  get('/create_director', { :controller => 'directors', :action => 'create' })
-
-  # READ
-  get('/directors', { :controller => 'directors', :action => 'index' })
-  get('/directors/:id', { :controller => 'directors', :action => 'show' })
-
-  # UPDATE
-  get('/directors/:id/edit', { :controller => 'directors', :action => 'edit' })
-  get('/update_director/:id', { :controller => 'directors', :action => 'update' })
-
-  # DELETE
-  get('/delete_director/:id', { :controller => 'directors', :action => 'destroy' })
-  #------------------------------
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
