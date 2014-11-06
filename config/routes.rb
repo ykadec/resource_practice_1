@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Route for bare domain:
+  get('/', { :controller => 'movies', :action => 'index' })
+
   # Routes for the Role resource:
   # CREATE
   get('/roles/new', { :controller => 'roles', :action => 'new' })

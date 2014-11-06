@@ -7,10 +7,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Dob</th>
       <th>Name</th>
       <th>Bio</th>
-      <th>Image url</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,10 +20,10 @@
   <tbody>
     <% @directors.each do |director| %>
       <tr>
+        <td><img src="<%= director.image_url %>" width="80"></td>
         <td><%= director.dob %></td>
         <td><%= director.name %></td>
-        <td><%= director.bio %></td>
-        <td><%= director.image_url %></td>
+        <td><%= truncate(director.bio) %></td>
         <td>
           <a href="/directors/<%= director.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
