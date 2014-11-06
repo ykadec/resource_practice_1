@@ -8,7 +8,6 @@ class RolesController < ApplicationController
   end
 
   def new_form
-    @role = Role.new
   end
 
   def create_row

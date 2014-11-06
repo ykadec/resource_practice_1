@@ -8,7 +8,6 @@ class ActorsController < ApplicationController
   end
 
   def new_form
-    @actor = Actor.new
   end
 
   def create_row
