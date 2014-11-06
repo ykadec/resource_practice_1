@@ -18,11 +18,9 @@ class ActorsController < ApplicationController
     @actor.bio = params[:bio]
     @actor.image_url = params[:image_url]
 
-    if @actor.save
-      redirect_to "/actors", :notice => "Actor created successfully."
-    else
-      render 'new'
-    end
+    @actor.save
+
+    render("show")
   end
 
   def edit_form
@@ -37,18 +35,14 @@ class ActorsController < ApplicationController
     @actor.bio = params[:bio]
     @actor.image_url = params[:image_url]
 
-    if @actor.save
-      redirect_to "/actors", :notice => "Actor updated successfully."
-    else
-      render 'edit'
-    end
+    @actor.save
+
+    render("show")
   end
 
   def destroy
     @actor = Actor.find(params[:id])
 
     @actor.destroy
-
-    redirect_to "/actors", :notice => "Actor deleted."
   end
 end

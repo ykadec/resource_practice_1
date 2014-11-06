@@ -17,11 +17,9 @@ class RolesController < ApplicationController
     @role.movie_id = params[:movie_id]
     @role.actor_id = params[:actor_id]
 
-    if @role.save
-      redirect_to "/roles", :notice => "Role created successfully."
-    else
-      render 'new'
-    end
+    @role.save
+
+    render("show")
   end
 
   def edit_form
@@ -35,18 +33,14 @@ class RolesController < ApplicationController
     @role.movie_id = params[:movie_id]
     @role.actor_id = params[:actor_id]
 
-    if @role.save
-      redirect_to "/roles", :notice => "Role updated successfully."
-    else
-      render 'edit'
-    end
+    @role.save
+
+    render("show")
   end
 
   def destroy
     @role = Role.find(params[:id])
 
     @role.destroy
-
-    redirect_to "/roles", :notice => "Role deleted."
   end
 end

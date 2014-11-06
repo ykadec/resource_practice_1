@@ -20,11 +20,9 @@ class MoviesController < ApplicationController
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
 
-    if @movie.save
-      redirect_to "/movies", :notice => "Movie created successfully."
-    else
-      render 'new'
-    end
+    @movie.save
+
+    render("show")
   end
 
   def edit_form
@@ -41,18 +39,14 @@ class MoviesController < ApplicationController
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
 
-    if @movie.save
-      redirect_to "/movies", :notice => "Movie updated successfully."
-    else
-      render 'edit'
-    end
+    @movie.save
+
+    render("show")
   end
 
   def destroy
     @movie = Movie.find(params[:id])
 
     @movie.destroy
-
-    redirect_to "/movies", :notice => "Movie deleted."
   end
 end

@@ -18,11 +18,9 @@ class DirectorsController < ApplicationController
     @director.bio = params[:bio]
     @director.image_url = params[:image_url]
 
-    if @director.save
-      redirect_to "/directors", :notice => "Director created successfully."
-    else
-      render 'new'
-    end
+    @director.save
+
+    render("show")
   end
 
   def edit_form
@@ -37,18 +35,14 @@ class DirectorsController < ApplicationController
     @director.bio = params[:bio]
     @director.image_url = params[:image_url]
 
-    if @director.save
-      redirect_to "/directors", :notice => "Director updated successfully."
-    else
-      render 'edit'
-    end
+    @director.save
+
+    render("show")
   end
 
   def destroy
     @director = Director.find(params[:id])
 
     @director.destroy
-
-    redirect_to "/directors", :notice => "Director deleted."
   end
 end
